@@ -1,15 +1,31 @@
 {
-  "name": "flip-test",
+  "name": "flip-business-registration-automation",
   "version": "1.0.0",
-  "description": "",
+  "description": "Automated E2E tests for the Flip for Business (B2B) registration flow, built with Playwright + TypeScript.",
   "main": "index.js",
-  "scripts": {},
-  "keywords": [],
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "test:smoke": "playwright test --grep @smoke",
+    "test:regression": "playwright test --grep @regression",
+    "test:registration": "playwright test --grep @registration",
+    "report": "playwright show-report",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "playwright",
+    "typescript",
+    "e2e-testing",
+    "test-automation",
+    "qa"
+  ],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
     "@playwright/test": "^1.63.0",
-    "@types/node": "^26.5.0"
+    "@types/node": "^26.5.0",
+    "typescript": "^5.6.0"
   }
 }
