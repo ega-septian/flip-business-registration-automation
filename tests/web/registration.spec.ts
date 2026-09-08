@@ -23,10 +23,14 @@ test.describe("Flip for Business — Registration", () => {
       // Step 3: Click submit the form.
       await signup.submit();
 
-      // Step 4: The form is accepted — no validation error is shown and the signup screen is left.
-      await expect(page.getByText(SignupError.emailFormat)).toHaveCount(0);
-      await expect(page.getByText(SignupError.passwordTooWeak)).toHaveCount(0);
-      await expect(page).not.toHaveURL(/\/signup$/);
+      // Step 4: The account is created and the "email verification sent" screen is shown for the registered email.
+      await expect(page).toHaveURL(/\/verification\/email/, { timeout: 15_000 });
+      await expect(
+        page.getByTestId("qa-email-verification-title"),
+      ).toHaveText("Email verifikasi terkirim!", { timeout: 15_000 });
+      await expect(
+        page.getByTestId("qa-email-verification-user-email"),
+      ).toHaveText(data.email, { timeout: 15_000 });
     },
   );
 
@@ -43,10 +47,14 @@ test.describe("Flip for Business — Registration", () => {
       // Step 3: Click submit the form.
       await signup.submit();
 
-      // Step 4: The form is accepted — no validation error is shown and the signup screen is left.
-      await expect(page.getByText(SignupError.emailFormat)).toHaveCount(0);
-      await expect(page.getByText(SignupError.passwordTooWeak)).toHaveCount(0);
-      await expect(page).not.toHaveURL(/\/signup$/);
+      // Step 4: The account is created and the "email verification sent" screen is shown for the registered email.
+      await expect(page).toHaveURL(/\/verification\/email/, { timeout: 15_000 });
+      await expect(
+        page.getByTestId("qa-email-verification-title"),
+      ).toHaveText("Email verifikasi terkirim!", { timeout: 15_000 });
+      await expect(
+        page.getByTestId("qa-email-verification-user-email"),
+      ).toHaveText(data.email, { timeout: 15_000 });
     },
   );
 
