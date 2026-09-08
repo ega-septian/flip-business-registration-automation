@@ -16,7 +16,7 @@
 
 ## Checklist
 
-- [ ] `npm run typecheck` passes
+- [ ] `npm run lint` and `npm run typecheck` pass
 - [ ] Each `test()` maps 1:1 to a test case and its title matches the doc verbatim
 - [ ] Every test is tagged with exactly one of `@smoke` / `@regression`, plus `@registration`
 - [ ] No `test.skip()` / conditional skips
